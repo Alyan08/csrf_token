@@ -6,6 +6,7 @@ import redis
 from uuid import uuid4
 from typing import Optional
 
+
 class CsrfTokenError(Exception):
     pass
 
@@ -85,5 +86,6 @@ class CsrfToken:
         except:
             response["msg"] = "unknown error"
 
-        return response
+        finally:
+            return response
 
