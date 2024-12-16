@@ -77,7 +77,7 @@ class CsrfToken:
 
             if not reusable:
                 cls.redis_client.delete(token)
-            response = {"status": False, "msg": "valid csrf token"}
+            response = {"status": True, "msg": "valid csrf token"}
 
         except redis.RedisError:
             response["msg"] = "Reddis error"
